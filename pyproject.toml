@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siftory"
+version = "1.0.0"
+description = "AI-powered product analytics platform with natural language data querying, automated analysis pipelines, and presentation generation"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+
+dependencies = [
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "duckdb>=0.9",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "fastapi>=0.100",
+    "uvicorn>=0.23",
+    "python-multipart>=0.0.6",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "faker>=18.0",
+]
+warehouse = [
+    "psycopg2-binary>=2.9",
+    "snowflake-connector-python>=3.0",
+    "databricks-sql-connector>=3.0",
+]
+llm = [
+    "anthropic>=0.25",
+    "openai>=1.0",
+]
+export = [
+    "python-docx>=1.1",
+    "notion-client>=3.0",
+    "statsmodels>=0.14",
+]
+all = [
+    "siftory[warehouse,llm,export,dev]",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with -m 'not slow')",
+    "integration: marks tests as integration tests",
+    "statistical: marks tests as statistical tests",
+]
+
+[tool.setuptools.packages.find]
+include = ["helpers*", "web*"]
