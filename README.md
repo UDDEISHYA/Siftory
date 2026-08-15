@@ -1,6 +1,6 @@
 # Siftory
 
-# Siftory — AI-Powered Product Analytics That Actually Analyzes
+# Siftory - Empowering Business Intuition With Faster Insights
 
 <div align="center">
 
