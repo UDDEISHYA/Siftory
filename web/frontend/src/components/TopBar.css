@@ -1,0 +1,92 @@
+.topbar {
+  height: var(--topbar-height);
+  background: var(--bg-topbar);
+  color: var(--text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-mark {
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.topbar-title {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+/* Breadcrumb */
+.topbar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+}
+
+.breadcrumb-current {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-dataset {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.topbar-chat-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-inverse);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.topbar-chat-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.topbar-chat-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}

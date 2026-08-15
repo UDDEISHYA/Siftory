@@ -1,0 +1,182 @@
+/* ConnectionsPage — AWS RDS-style management dashboard */
+
+.connections-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.add-conn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.add-conn-btn:hover {
+  background: var(--accent-dark, #4338CA);
+}
+
+/* Metric cards row */
+.connections-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .connections-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Connection cards grid */
+.connections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.connection-card {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s;
+}
+
+.connection-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.conn-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.conn-card-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.conn-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.conn-card-name {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conn-card-provider {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.conn-card-body {
+  padding: 16px;
+  flex: 1;
+}
+
+.conn-card-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.conn-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.conn-stat-value {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+.conn-stat-label {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.conn-card-error {
+  margin-top: 12px;
+  padding: 8px 10px;
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 4px;
+  font-size: var(--text-xs);
+  color: var(--danger, #EF4444);
+  line-height: 1.4;
+}
+
+.conn-card-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.conn-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.conn-action-btn:hover {
+  background: var(--bg-section);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.conn-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.conn-action-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.06);
+  color: var(--danger, #EF4444);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Spin animation for test loading */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}

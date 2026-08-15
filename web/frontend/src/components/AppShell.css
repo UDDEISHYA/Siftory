@@ -1,0 +1,21 @@
+.app-shell {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-body {
+  display: flex;
+  height: calc(100vh - var(--topbar-height));
+  margin-top: var(--topbar-height);
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: margin-right 0.2s ease;
+}
